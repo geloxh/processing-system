@@ -14,3 +14,32 @@ system for SMEs for paperless and make the indicated features below automated, g
 ## TECH-STACK
 - *PHP*
 - *MySQL*
+
+## DB DESIGN
+- **users**           -- employees + roles (admin, approver, staff)
+- **forms**        -- generic: id, type, status, submitted_by, created_at
+- **form_data**     -- JSON or EAV for form-specific fields
+- **approvals**       -- approval chain: form_id, approver_id, status, remarks
+- **audit_logs**      -- who did what and when
+
+## PROJECT-STRUCTURE
+```
+    processing-system/
+    ├── app/
+    │   ├── Controllers/        # Business logic per form
+    │   ├── Models/             # DB interactions
+    │   ├── Middleware/         # Auth, role checks
+    │   └── Helpers/            # Reusable utilities
+    ├── config/
+    │   ├── database.php
+    │   └── app.php
+    ├── public/                 # Entry point, assets
+    │   └── index.php
+    ├── views/
+    │   ├── layouts/            # Base templates
+    │   └── forms/              # One view per form
+    ├── routes/
+    │   └── web.php
+    ├── migrations/             # DB schema versioning
+    └── .env                    # Environment config (never commit)
+```
