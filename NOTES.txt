@@ -1,3 +1,4 @@
+-- Features to Implement --
 Advance Payment Form
 Overtime Authorization Form
 Request for Payment Form
@@ -6,3 +7,9 @@ Leave Application Form
 Reimbursement Form
 Liquidation Form
 Vehicle Request Form
+
+-- Initialize Composer & Install Dependencies --
+composer init --name="sme/processing-system" --type=project --no-interaction
+composer require vlucas/phpdotenv phpmailer/phpmailer
+
+-- 
