@@ -15,6 +15,12 @@ system for SMEs for paperless and make the indicated features below automated, g
 - *PHP*
 - *MySQL*
 
+## TOOLS TO USE
+- *Composer*
+- *PHPMailer*
+- *vlucas/phpdotenv
+- Bootstrap 5
+
 ## DB DESIGN
 - **users**           -- employees + roles (admin, approver, staff)
 - **forms**        -- generic: id, type, status, submitted_by, created_at
